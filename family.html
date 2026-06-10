@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Family</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .page-content {
+      max-width: 860px;
+      margin: 40px auto;
+      background: var(--cream);
+      border-radius: 18px;
+      border: 3px solid var(--green);
+      box-shadow: 4px 4px 0px var(--green);
+      padding: 40px 48px;
+    }
+    .page-content h1 {
+      font-family: 'Playfair Display', serif;
+      color: var(--red);
+      font-size: 2rem;
+      margin-bottom: 16px;
+      border-bottom: 3px solid var(--coral);
+      padding-bottom: 10px;
+    }
+    .page-content p {
+      font-size: 1rem;
+      color: var(--dark);
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Audio -->
+  <audio id="bgAudio" src="audio/bgsound.mp3" loop></audio>
+
+    <!-- ===================== HEADER / NAVBAR ===================== -->
+  <table id="navbar" cellpadding="0" cellspacing="0">
+    <tr>
+      <!-- Logo (links to home) -->
+      <td class="nav-cell nav-logo-cell">
+        <a href="index.html" title="Home">
+          <img src="image/logoshu.png" alt="Logo" class="nav-logo-img"
+               onerror="this.outerHTML='<span class=nav-logo-text>✦ SHU ✦</span>'"/>
+        </a>
+      </td>
+      <!-- Home -->
+      <td class="nav-cell">
+        <a href="index.html" class="nav-link home-icon" title="Home">
+          <img src="image/home.png" alt="Home" class="home-img"
+               onerror="this.outerHTML='🏠'"/>
+        </a>
+      </td>
+      <!-- About Me -->
+      <td class="nav-cell">
+        <a href="aboutme.html" class="nav-link">About Me</a>
+      </td>
+      <!-- Dropdown -->
+      <td class="nav-cell dropdown-cell">
+        <div class="dropdown" id="mainDropdown">
+          <button class="dropdown-btn" onclick="toggleDropdown()">Menu ▾</button>
+          <div class="dropdown-content">
+            <a href="education.html">Education</a>
+            <a href="family.html">Family</a>
+            <a href="friends.html">Friends</a>
+            <a href="hobby.html">Hobby</a>
+            <a href="moments.html">Moments</a>
+          </div>
+        </div>
+      </td>
+      <!-- Mute -->
+      <td class="nav-cell sound-cell">
+        <button id="muteBtn" class="mute-btn" onclick="toggleMute()" title="Mute/Unmute">🔊</button>
+      </td>
+    </tr>
+  </table>
+  <!-- ==================== END HEADER ========================== -->
+
+   <main>
+ 
+    <!-- ── BANNER ── -->
+    <div id="fam-banner">
+      <h1>My Family 🏡</h1>
+      <p>The people who made me, me. ❤️</p>
+    </div>
+ 
+    <!-- ── INTRO ── -->
+    <div id="fam-intro">
+      <p>Thank you Allah for making me born in this family. They will always be my strongest support system. I love my family, ardently, always. 🌸</p>
+    </div>
+ 
+    <!-- ── GALLERY GRID ── -->
+    <div id="fam-gallery">
+ 
+      <!-- Item 1 — Photo -->
+      <div class="fam-item" onclick="openLightbox('image/fam1.png', 'Eid time!🌙')">
+        <div class="fam-media">
+          <img src="image/fam1.png" alt="Family Photo 1"
+               onerror="this.src=''; this.parentElement.classList.add('fam-placeholder')"/>
+          <div class="fam-overlay">🔍 View</div>
+        </div>
+        <p class="fam-caption">Eid time!🌙</p>
+      </div>
+ 
+      <!-- Item 2 — Photo -->
+      <div class="fam-item" onclick="openLightbox('image/fam2.png', 'Celebrating Abah Birthday🍰')">
+        <div class="fam-media">
+          <img src="image/fam2.png" alt="Family Photo 2"
+               onerror="this.src=''; this.parentElement.classList.add('fam-placeholder')"/>
+          <div class="fam-overlay">🔍 View</div>
+        </div>
+        <p class="fam-caption">Celebrating Abah Birthday🍰</p>
+      </div>
+ 
+      <!-- Item 3 — Video -->
+      <div class="fam-item fam-video-item">
+        <div class="fam-media fam-video-wrap">
+          <video controls preload="metadata">
+            <source src="video/famvid1.mp4" type="video/mp4"/>
+            Your browser does not support video.
+          </video>
+        </div>
+        <p class="fam-caption">My sister & her husband🤾</p>
+      </div>
+ 
+      <!-- Item 4 — Photo -->
+      <div class="fam-item" onclick="openLightbox('image/fam3.png', '1st time at IKEA🐍')">
+        <div class="fam-media">
+          <img src="image/fam3.png" alt="Family Photo 3"
+               onerror="this.src=''; this.parentElement.classList.add('fam-placeholder')"/>
+          <div class="fam-overlay">🔍 View</div>
+        </div>
+        <p class="fam-caption">1st time at IKEA🐍</p>
+      </div>
+ 
+      <!-- Item 5 — Photo -->
+      <div class="fam-item" onclick="openLightbox('image/fam4.png', 'Family trip to vineyard🍇')">
+        <div class="fam-media">
+          <img src="image/fam4.png" alt="Family Photo 4"
+               onerror="this.src=''; this.parentElement.classList.add('fam-placeholder')"/>
+          <div class="fam-overlay">🔍 View</div>
+        </div>
+        <p class="fam-caption">Family trip to vineyard🍇</p>
+      </div>
+ 
+      <!-- Item 6 — Video -->
+      <div class="fam-item fam-video-item">
+        <div class="fam-media fam-video-wrap">
+          <video controls preload="metadata">
+            <source src="video/famvid2.mp4" type="video/mp4"/>
+            Your browser does not support video.
+          </video>
+        </div>
+        <p class="fam-caption">Family Day's gift giving❣️</p>
+      </div>
+ 
+      <!-- Item 7 — Photo -->
+      <div class="fam-item" onclick="openLightbox('image/fam5.png', '4/5 siblings👨‍👩')">
+        <div class="fam-media">
+          <img src="image/fam5.png" alt="Family Photo 5"
+               onerror="this.src=''; this.parentElement.classList.add('fam-placeholder')"/>
+          <div class="fam-overlay">🔍 View</div>
+        </div>
+        <p class="fam-caption">4/5 siblings👨‍👩‍👧</p>
+      </div>
+ 
+ <!-- Item 8 — Video -->
+<div class="fam-item fam-video-item">
+  <div class="fam-media fam-video-wrap">
+    <video controls preload="metadata">
+      <source src="video/famvid3.mp4" type="video/mp4"/>
+      Your browser does not support video.
+    </video>
+  </div>
+  <p class="fam-caption">Youngest in the family> Aboy🐱</p>
+</div>
+
+<!-- Item 9 — Photo -->
+<div class="fam-item" onclick="openLightbox('image/fam6.png', 'Mama with arwah Tok🧕')">
+  <div class="fam-media">
+    <img src="image/fam6.png" alt="Family Photo 6"
+         onerror="this.src=''; this.parentElement.classList.add('fam-placeholder')"/>
+    <div class="fam-overlay">🔍 View</div>
+  </div>
+  <p class="fam-caption">Mama with arwah Tok🧕</p>
+</div>
+ 
+    </div>
+    <!-- end gallery -->
+ 
+    <!-- ── LIGHTBOX ── -->
+    <div id="lightbox" onclick="closeLightbox()">
+      <div id="lightbox-inner">
+        <button id="lightbox-close" onclick="closeLightbox()">✕</button>
+        <img id="lightbox-img" src="" alt=""/>
+        <p id="lightbox-caption"></p>
+      </div>
+    </div>
+ 
+<button id="backToTop" onclick="window.scrollTo({top:0, behavior:'smooth'})" title="Back to top">↑</button>
+  </main>
+
+      <!-- ===================== FOOTER ============================= -->
+  <footer>
+    <div class="footer-bottom">
+      <span class="footer-contact">
+        📞 Call: <a href="tel:01777746386" class="footer-link">017-7746386</a>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        ✉️ Email: <a href="mailto:ainshuhada2206@gmail.com" class="footer-link">ainshuhada2206@gmail.com</a>
+      </span>
+      <br/>
+      &copy; <span id="copy-year"></span> Shu's &nbsp;|&nbsp; All Rights Reserved
+      &nbsp;&#10086;&nbsp;
+      Last Updated: <span id="last-updated"></span>
+    </div>
+  </footer>
+  <!-- ==================== END FOOTER ========================== -->
+
+  <script src="script.js"></script>
+</body>
+</html>

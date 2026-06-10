@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Moments</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .page-content {
+      max-width: 860px;
+      margin: 40px auto;
+      background: var(--cream);
+      border-radius: 18px;
+      border: 3px solid var(--green);
+      box-shadow: 4px 4px 0px var(--green);
+      padding: 40px 48px;
+    }
+    .page-content h1 {
+      font-family: 'Playfair Display', serif;
+      color: var(--red);
+      font-size: 2rem;
+      margin-bottom: 16px;
+      border-bottom: 3px solid var(--coral);
+      padding-bottom: 10px;
+    }
+    .page-content p {
+      font-size: 1rem;
+      color: var(--dark);
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Audio -->
+  <audio id="bgAudio" src="audio/bgsound.mp3" loop></audio>
+
+    <!-- ===================== HEADER / NAVBAR ===================== -->
+  <table id="navbar" cellpadding="0" cellspacing="0">
+    <tr>
+      <!-- Logo (links to home) -->
+      <td class="nav-cell nav-logo-cell">
+        <a href="index.html" title="Home">
+          <img src="image/logoshu.png" alt="Logo" class="nav-logo-img"
+               onerror="this.outerHTML='<span class=nav-logo-text>✦ SHU ✦</span>'"/>
+        </a>
+      </td>
+      <!-- Home -->
+      <td class="nav-cell">
+        <a href="index.html" class="nav-link home-icon" title="Home">
+          <img src="image/home.png" alt="Home" class="home-img"
+               onerror="this.outerHTML='🏠'"/>
+        </a>
+      </td>
+      <!-- About Me -->
+      <td class="nav-cell">
+        <a href="aboutme.html" class="nav-link">About Me</a>
+      </td>
+      <!-- Dropdown -->
+      <td class="nav-cell dropdown-cell">
+        <div class="dropdown" id="mainDropdown">
+          <button class="dropdown-btn" onclick="toggleDropdown()">Menu ▾</button>
+          <div class="dropdown-content">
+            <a href="education.html">Education</a>
+            <a href="family.html">Family</a>
+            <a href="friends.html">Friends</a>
+            <a href="hobby.html">Hobby</a>
+            <a href="moments.html">Moments</a>
+          </div>
+        </div>
+      </td>
+      <!-- Mute -->
+      <td class="nav-cell sound-cell">
+        <button id="muteBtn" class="mute-btn" onclick="toggleMute()" title="Mute/Unmute">🔊</button>
+      </td>
+    </tr>
+  </table>
+  <!-- ==================== END HEADER ========================== -->
+
+  <main>
+<!-- Hero -->
+<section id="moments-hero">
+  <h1>Moments</h1>
+  <p>little pieces of time worth keeping</p>
+</section>
+ 
+<!-- Scrapbook Board -->
+<section class="scrapbook-board">
+  <div class="scrapbook-grid">
+ 
+    <!-- FEATURED wide card — best for your most special memory -->
+    <div class="scrapbook-card featured" style="--tilt: 0deg">
+      <div class="card-tape"></div>
+      <img src="image/moment1.png" class="card-photo">
+      <span class="card-date">JUNE 2026</span>
+      <div class="card-title">Family Day Haji Kassim & Hjh Sabariah!!</div>
+      <div class="card-caption">This was our first ever family day that we had on my mom's side of family! We planned to had it somewhere else but unfortunately the place was bookd so we held it at my house. 
+All my cousins, uncles and aunt were there. We played a bunch of different games,
+win gifts and had barbeques! It was so much fun! My family is already planning for the next year's family day.</div>
+      <span class="card-sticker">⭐</span>
+    </div>
+ 
+    <!-- Card 2 -->
+    <div class="scrapbook-card" style="--tilt: -2deg">
+      <div class="card-tape"></div>
+      <img src="image/moment2.png" class="card-photo">
+      <span class="card-date">SEPTEMBER 2024</span>
+      <div class="card-title">First Day at UiTM Kedah!</div>
+      <div class="card-caption">A nervewrecking but exciting moment for me. I just couldn't wait to see how my days would look like.</div>
+      <span class="card-sticker">🌿</span>
+    </div>
+ 
+    <!-- Card 3 -->
+    <div class="scrapbook-card" style="--tilt: 1.5deg">
+      <div class="card-tape"></div>
+      <img src="image/moment3.png" class="card-photo">
+      <span class="card-date">SEPTEMBER 2023</span>
+      <div class="card-title">Abang Fizi's Wedding!</div>
+      <div class="card-caption">This was the day my eldest brother got marrried and I got to have another sister!</div>
+      <span class="card-sticker">🎀</span>
+    </div>
+ 
+    <!-- Card 4 -->
+    <div class="scrapbook-card" style="--tilt: -1deg">
+      <div class="card-tape"></div>
+      <img src="image/moment4.png" class="card-photo">
+      <span class="card-date">MARCH 2026</span>
+      <div class="card-title">Mama Daughter Time!</div>
+      <div class="card-caption">This was taken during Eid ul Fitr by my brother.
+We had gotten out that day to go to my Acu's house and stopped by the lake to take a picture.</div>
+      <span class="card-sticker">🌸</span>
+    </div>
+ 
+    <!-- Card 5 -->
+    <div class="scrapbook-card" style="--tilt: 2deg">
+      <div class="card-tape"></div>
+      <img src="image/moment5.png" class="card-photo">
+      <span class="card-date">JUNE 2024</span>
+      <div class="card-title">SPM!!</div>
+      <div class="card-caption">Alhamdulillah, I got 8A for my SPM!! I couldn't even believe my eyes when I first checked the result!</div>
+      <span class="card-sticker">✨</span>
+    </div>
+ 
+    <!-- Card 6 -->
+    <div class="scrapbook-card" style="--tilt: -1.5deg">
+      <div class="card-tape"></div>
+      <img src="image/moment6.png" class="card-photo">
+      <span class="card-date">NOVEMBER 2023</span>
+      <div class="card-title">Kakak's Wedding!!</div>
+      <div class="card-caption">This was the day where I got another brother! I remember seeing my dad cry watching her walk to the altar.</div>
+      <span class="card-sticker">🍂</span>
+    </div>
+ 
+    <div class="scrapbook-card featured" style="--tilt: 0deg">
+      <div class="card-tape"></div>
+      <img src="image/moment7.png" class="card-photo">
+      <span class="card-date">JANUARY 2025</span>
+      <div class="card-title">A Little Trip</div>
+      <div class="card-caption">My sister and her husband took us on a little trip at a resort! We had a relaxing day,
+visit a petting zoo and had delicious food! Unfortunately, my eldest brother and his wife couldn't make it to the trip.</div>
+      <span class="card-sticker">⭐</span>
+    </div>
+    <!-- To add more cards: copy any block above.
+         Vary --tilt between -3deg and 3deg for the scrapbook feel.
+         Use class="scrapbook-card featured" to make a card span 2 columns. -->
+ 
+  </div>
+</section>
+
+<button id="backToTop" onclick="window.scrollTo({top:0, behavior:'smooth'})" title="Back to top">↑</button>
+  </main>
+
+      <!-- ===================== FOOTER ============================= -->
+  <footer>
+    <div class="footer-bottom">
+      <span class="footer-contact">
+        📞 Call: <a href="tel:01777746386" class="footer-link">017-7746386</a>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        ✉️ Email: <a href="mailto:ainshuhada2206@gmail.com" class="footer-link">ainshuhada2206@gmail.com</a>
+      </span>
+      <br/>
+      &copy; <span id="copy-year"></span> Shu's &nbsp;|&nbsp; All Rights Reserved
+      &nbsp;&#10086;&nbsp;
+      Last Updated: <span id="last-updated"></span>
+    </div>
+  </footer>
+  <!-- ==================== END FOOTER ========================== -->
+
+  <script src="script.js"></script>
+</body>
+</html>

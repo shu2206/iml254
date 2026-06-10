@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hobby</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .page-content {
+      max-width: 860px;
+      margin: 40px auto;
+      background: var(--cream);
+      border-radius: 18px;
+      border: 3px solid var(--green);
+      box-shadow: 4px 4px 0px var(--green);
+      padding: 40px 48px;
+    }
+    .page-content h1 {
+      font-family: 'Playfair Display', serif;
+      color: var(--red);
+      font-size: 2rem;
+      margin-bottom: 16px;
+      border-bottom: 3px solid var(--coral);
+      padding-bottom: 10px;
+    }
+    .page-content p {
+      font-size: 1rem;
+      color: var(--dark);
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Audio -->
+  <audio id="bgAudio" src="audio/bgsound.mp3" loop></audio>
+
+    <!-- ===================== HEADER / NAVBAR ===================== -->
+  <table id="navbar" cellpadding="0" cellspacing="0">
+    <tr>
+      <!-- Logo (links to home) -->
+      <td class="nav-cell nav-logo-cell">
+        <a href="index.html" title="Home">
+          <img src="image/logoshu.png" alt="Logo" class="nav-logo-img"
+               onerror="this.outerHTML='<span class=nav-logo-text>✦ SHU ✦</span>'"/>
+        </a>
+      </td>
+      <!-- Home -->
+      <td class="nav-cell">
+        <a href="index.html" class="nav-link home-icon" title="Home">
+          <img src="image/home.png" alt="Home" class="home-img"
+               onerror="this.outerHTML='🏠'"/>
+        </a>
+      </td>
+      <!-- About Me -->
+      <td class="nav-cell">
+        <a href="aboutme.html" class="nav-link">About Me</a>
+      </td>
+      <!-- Dropdown -->
+      <td class="nav-cell dropdown-cell">
+        <div class="dropdown" id="mainDropdown">
+          <button class="dropdown-btn" onclick="toggleDropdown()">Menu ▾</button>
+          <div class="dropdown-content">
+            <a href="education.html">Education</a>
+            <a href="family.html">Family</a>
+            <a href="friends.html">Friends</a>
+            <a href="hobby.html">Hobby</a>
+            <a href="moments.html">Moments</a>
+          </div>
+        </div>
+      </td>
+      <!-- Mute -->
+      <td class="nav-cell sound-cell">
+        <button id="muteBtn" class="mute-btn" onclick="toggleMute()" title="Mute/Unmute">🔊</button>
+      </td>
+    </tr>
+  </table>
+  <!-- ==================== END HEADER ========================== -->
+
+  <main>
+ 
+    <!-- ══════════════════════════════════════
+         MAIN HOBBY BANNER
+         ══════════════════════════════════════ -->
+    <div id="hobby-main-banner">
+      <h1>My Hobbies 🌸</h1>
+      <p>Things that make my heart happy ✨</p>
+      <div id="hobby-list">
+        <span class="hobby-pill">🎬 Movies &amp; Shows</span>
+        <span class="hobby-pill">🎵 Songs</span>
+        <span class="hobby-pill">🎨 Arts &amp; Craft</span>
+      </div>
+    </div>
+ 
+    <!-- ══════════════════════════════════════
+         HOBBY 1 — BINGE WATCH MOVIES / SHOWS
+         ══════════════════════════════════════ -->
+    <div class="hobby-banner hobby-banner-red">
+      <h1>🎬 Binge Watch Movies &amp; Shows</h1>
+      <p>Stories that live rent-free in my head ✨</p>
+    </div>
+ 
+    <!-- FAV MOVIES — alternating timeline -->
+    <div class="hobby-section">
+      <h2 class="hobby-sub-title">Fav Movies</h2>
+ 
+      <div class="movie-timeline">
+ 
+        <!-- Movie 1 — right -->
+        <div class="movie-item movie-right">
+          <div class="movie-card movie-card-coral">
+            <div class="movie-poster-wrap">
+              <img src="image/movie1.png" alt="Movie 1"
+                   onerror="this.style.display='none'"/>
+              <span class="movie-poster-placeholder">🎬</span>
+            </div>
+            <div class="movie-info">
+              <h3 class="movie-title">10 Things I Hate About You</h3>
+              <p class="movie-review">"I just love romantic comedy. Not to mention Heath Ledger and Julia Stiles looks really good here."</p>
+            </div>
+          </div>
+        </div>
+ 
+        <!-- Movie 2 — left -->
+        <div class="movie-item movie-left">
+          <div class="movie-card movie-card-green">
+            <div class="movie-poster-wrap">
+              <img src="image/movie2.png" alt="Movie 2"
+                   onerror="this.style.display='none'"/>
+              <span class="movie-poster-placeholder">🎬</span>
+            </div>
+            <div class="movie-info">
+              <h3 class="movie-title">Up</h3>
+              <p class="movie-review">"The fact that this movie managed to make the best heart-wrenching love story in the first 8 minutes with barely any lines spoken is peak cinema."</p>
+            </div>
+          </div>
+        </div>
+ 
+        <!-- Movie 3 — right -->
+        <div class="movie-item movie-right">
+          <div class="movie-card movie-card-red">
+            <div class="movie-poster-wrap">
+              <img src="image/movie3.png" alt="Movie 3"
+                   onerror="this.style.display='none'"/>
+              <span class="movie-poster-placeholder">🎬</span>
+            </div>
+            <div class="movie-info">
+              <h3 class="movie-title">White Chicks</h3>
+              <p class="movie-review">"It's just the fact the characters disguise is really obvious but in the movie it supposedly looks realistic is so hilarious."</p>
+            </div>
+          </div>
+        </div>
+ 
+      </div>
+      <!-- end movie timeline -->
+ 
+      <!-- TOP 3 ANIMES -->
+      <h2 class="hobby-sub-title">Top 3 Animes 🌸</h2>
+      <div class="anime-grid">
+ 
+        <div class="anime-card anime-card-coral">
+          <div class="anime-img-wrap">
+            <img src="image/anime1.png" alt="Anime 1"
+                 onerror="this.style.display='none'"/>
+            <span class="anime-placeholder">🌸</span>
+          </div>
+          <h3 class="anime-title">Naruto Shippuden</h3>
+        </div>
+ 
+        <div class="anime-card anime-card-green">
+          <div class="anime-img-wrap">
+            <img src="image/anime2.png" alt="Anime 2"
+                 onerror="this.style.display='none'"/>
+            <span class="anime-placeholder">🌸</span>
+          </div>
+          <h3 class="anime-title">The Apothecary Diaries</h3>
+        </div>
+ 
+        <div class="anime-card anime-card-red">
+          <div class="anime-img-wrap">
+            <img src="image/anime3.png" alt="Anime 3"
+                 onerror="this.style.display='none'"/>
+            <span class="anime-placeholder">🌸</span>
+          </div>
+          <h3 class="anime-title">Spy X Family</h3>
+        </div>
+ 
+      </div>
+ 
+      <!-- RECOMMENDATIONS -->
+      <h2 class="hobby-sub-title"> Movie Recommendations 🎥</h2>
+      <div class="reco-grid">
+ 
+        <div class="reco-item">
+          <div class="reco-circle">
+            <img src="image/reco1.png" alt="Reco 1"
+                 onerror="this.style.display='none'"/>
+            <span class="reco-placeholder">🎬</span>
+          </div>
+          <p class="reco-title">One Day</p>
+        </div>
+ 
+        <div class="reco-item">
+          <div class="reco-circle">
+            <img src="image/reco2.png" alt="Reco 2"
+                 onerror="this.style.display='none'"/>
+            <span class="reco-placeholder">🎬</span>
+          </div>
+          <p class="reco-title">The Witch: Part 1-The Subversion</p>
+        </div>
+ 
+        <div class="reco-item">
+          <div class="reco-circle">
+            <img src="image/reco3.png" alt="Reco 3"
+                 onerror="this.style.display='none'"/>
+            <span class="reco-placeholder">🎬</span>
+          </div>
+          <p class="reco-title">Ready Or Not</p>
+        </div>
+ 
+      </div>
+    </div>
+    <!-- end hobby 1 section -->
+ 
+    <!-- ══════════════════════════════════════
+         HOBBY 2 — LISTEN TO SONGS
+         ══════════════════════════════════════ -->
+    <div class="hobby-banner hobby-banner-green">
+      <h1>🎵 Listen to Songs🎵</h1>
+      <p>Music is my safe place 🎶</p>
+    </div>
+    <div class="hobby-section">
+ 
+      <!-- ON LOOP THESE DAYS — album slider -->
+      <h2 class="hobby-sub-title">On Loop These Days</h2>
+      <div class="album-slider-wrap">
+        <button class="album-arrow album-prev" onclick="moveAlbum(-1)">&#8249;</button>
+        <div class="album-track" id="albumTrack">
+ 
+          <!-- Album 1 -->
+          <div class="album-slide active">
+            <a href="audio/song1.mp3" class="album-link" onclick="playAlbumSong('audio/song1.mp3'); return false;">
+              <div class="album-img-wrap">
+                <img src="image/album1.png" alt="Album 1" onerror="this.style.display='none'"/>
+                <span class="album-placeholder">🎵</span>
+                <div class="album-overlay">▶ Play</div>
+              </div>
+            </a>
+            <p class="album-title">My Moon My Man by Feist</p>
+          </div>
+ 
+          <!-- Album 2 -->
+          <div class="album-slide">
+            <a href="audio/song2.mp3" class="album-link" onclick="playAlbumSong('audio/song2.mp3'); return false;">
+              <div class="album-img-wrap">
+                <img src="image/album2.png" alt="Album 2" onerror="this.style.display='none'"/>
+                <span class="album-placeholder">🎵</span>
+                <div class="album-overlay">▶ Play</div>
+              </div>
+            </a>
+            <p class="album-title">TNT by Cortis</p>
+          </div>
+ 
+          <!-- Album 3 -->
+          <div class="album-slide">
+            <a href="audio/song3.mp3" class="album-link" onclick="playAlbumSong('audio/song3.mp3'); return false;">
+              <div class="album-img-wrap">
+                <img src="image/album3.png" alt="Album 3" onerror="this.style.display='none'"/>
+                <span class="album-placeholder">🎵</span>
+                <div class="album-overlay">▶ Play</div>
+              </div>
+            </a>
+            <p class="album-title">Legendary Lovers by Katy Perry</p>
+          </div>
+ 
+        </div>
+        <button class="album-arrow album-next" onclick="moveAlbum(1)">&#8250;</button>
+        <div class="album-dots" id="albumDots">
+          <span class="aldot active"></span>
+          <span class="aldot"></span>
+          <span class="aldot"></span>
+        </div>
+      </div>
+ 
+      <!-- MY PLAYLISTS -->
+      <h2 class="hobby-sub-title">My Playlists 🎧</h2>
+      <div class="playlist-grid">
+ 
+        <a href="https://open.spotify.com/playlist/6t5kiHOAErV2yN3ER1M5mJ?si=RJCly32GQhymq-oJRFGl1g&pi=_50aaocUTeuHH" target="_blank" class="playlist-card playlist-card-coral">
+          <div class="playlist-icon">🎶</div>
+          <div class="playlist-info">
+            <p class="playlist-name">🎇kpop?🫠🎇</p>
+            <p class="playlist-desc">Huge kpop fans since 4y/o. Dancing mode on!</p>
+          </div>
+          <span class="playlist-arrow">→</span>
+        </a>
+ 
+        <a href="https://open.spotify.com/playlist/1Maj4uryDr6Rs3GhyDw1W8?si=VE09c3ETS1KJMzUncoc_zg&pi=cNLh6ZiJQlq2z" target="_blank" class="playlist-card playlist-card-green">
+          <div class="playlist-icon">🌿</div>
+          <div class="playlist-info">
+            <p class="playlist-name">💥what villain sounds like💥</p>
+            <p class="playlist-desc">When you're tired of being nice, listen to this.</p>
+          </div>
+          <span class="playlist-arrow">→</span>
+        </a>
+ 
+        <a href="https://open.spotify.com/playlist/79HQmjEsUB1GPhfeHfBC4b?si=r3SihdLRSXiDuAlIrKv6BA&pi=m_M9_A0uR22Lr" target="_blank" class="playlist-card playlist-card-red">
+          <div class="playlist-icon">🌙</div>
+          <div class="playlist-info">
+            <p class="playlist-name">❣️love like this❣️</p>
+            <p class="playlist-desc">All the feelings caused by love, good and bad.</p>
+          </div>
+          <span class="playlist-arrow">→</span>
+        </a>
+ 
+      </div>
+    </div>
+ 
+    <!-- ══════════════════════════════════════
+         HOBBY 3 — ARTS & CRAFT
+         ══════════════════════════════════════ -->
+    <div class="hobby-banner hobby-banner-coral">
+      <h1>🎨 Arts &amp; Craft</h1>
+      <p>Making things with my own hands 🌿</p>
+    </div>
+    <div class="hobby-section">
+ 
+      <!-- ── BUILD LEGO: slider left, text right ── -->
+      <div class="craft-row">
+        <div class="craft-col craft-col-media">
+          <div class="craft-slider-wrap" id="legoSlider">
+            <button class="craft-arrow craft-prev" onclick="moveCraft('lego',-1)">&#8249;</button>
+            <div class="craft-track">
+              <div class="craft-slide active">
+                <img src="image/lego1.png" alt="Lego 1" onerror="this.style.display='none'"/>
+                <span class="craft-placeholder"></span>
+              </div>
+              <div class="craft-slide">
+                <img src="image/lego2.png" alt="Lego 2" onerror="this.style.display='none'"/>
+                <span class="craft-placeholder"></span>
+              </div>
+            </div>
+            <button class="craft-arrow craft-next" onclick="moveCraft('lego',1)">&#8250;</button>
+            <div class="craft-dots" id="lego-dots">
+              <span class="crdot active"></span>
+              <span class="crdot"></span>
+            </div>
+          </div>
+        </div>
+        <div class="craft-col craft-col-text craft-text-coral">
+          <h3 class="craft-title">🧱 Build Lego</h3>
+          <p class="craft-desc">Write something about your lego hobby here — what you love about it, your favourite builds, how long you've been doing it, anything!</p>
+        </div>
+      </div>
+ 
+      <!-- ── DIAMOND PAINTING: text left, photo right ── -->
+      <div class="craft-row craft-row-reverse">
+        <div class="craft-col craft-col-text craft-text-green">
+          <h3 class="craft-title">💎 Diamond Painting</h3>
+          <p class="craft-desc">Write something about your diamond painting hobby here — what you love about it, your favourite pieces, how relaxing it is!</p>
+        </div>
+        <div class="craft-col craft-col-media">
+          <div class="craft-img-box">
+            <img src="image/diamond.png" alt="Diamond Painting" onerror="this.style.display='none'"/>
+            <span class="craft-placeholder"></span>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- ── ORIGAMI: photo left, text right ── -->
+      <div class="craft-row">
+        <div class="craft-col craft-col-media">
+          <div class="craft-img-box">
+            <img src="image/origami.png" alt="Origami" onerror="this.style.display='none'"/>
+            <span class="craft-placeholder"></span>
+          </div>
+        </div>
+        <div class="craft-col craft-col-text craft-text-red">
+          <h3 class="craft-title">🦢 Origami</h3>
+          <p class="craft-desc">Write something about your origami hobby here — what you love about it, your favourite folds, how calming it feels!</p>
+        </div>
+      </div>
+ 
+      <!-- ── TUTORIAL TABLE ── -->
+      <h2 class="hobby-sub-title">Tutorial Links 🎥</h2>
+      <table class="craft-tutorial-table" cellpadding="0" cellspacing="0">
+        <tr>
+          <th class="craft-th">#</th>
+          <th class="craft-th">Craft</th>
+          <th class="craft-th">Link</th>
+        </tr>
+        <tr class="craft-tr craft-tr-coral">
+          <td class="craft-td">1</td>
+          <td class="craft-td">Black Cat Origami</td>
+          <td class="craft-td"><a href="https://www.youtube.com/watch?v=Lma76RE1NWQ" target="_blank" class="craft-link">▶ Watch on YouTube</a></td>
+        </tr>
+        <tr class="craft-tr craft-tr-green">
+          <td class="craft-td">2</td>
+          <td class="craft-td">Origami Lily Flower</td>
+          <td class="craft-td"><a href="https://www.youtube.com/watch?v=yCn-YTti1M0" target="_blank" class="craft-link">▶ Watch on YouTube</a></td>
+        </tr>
+        <tr class="craft-tr craft-tr-red">
+          <td class="craft-td">3</td>
+          <td class="craft-td">Butterfly Origami</td>
+          <td class="craft-td"><a href="https://www.youtube.com/watch?v=gvQRiMlTWWw" target="_blank" class="craft-link">▶ Watch on YouTube</a></td>
+        </tr>
+      </table>
+ 
+    </div>
+ 
+ 
+    <!-- Back to Top -->
+    <button id="backToTop" onclick="window.scrollTo({top:0, behavior:'smooth'})" title="Back to top">↑</button>
+  </main>
+
+      <!-- ===================== FOOTER ============================= -->
+  <footer>
+    <div class="footer-bottom">
+      <span class="footer-contact">
+        📞 Call: <a href="tel:01777746386" class="footer-link">017-7746386</a>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        ✉️ Email: <a href="mailto:ainshuhada2206@gmail.com" class="footer-link">ainshuhada2206@gmail.com</a>
+      </span>
+      <br/>
+      &copy; <span id="copy-year"></span> Shu's &nbsp;|&nbsp; All Rights Reserved
+      &nbsp;&#10086;&nbsp;
+      Last Updated: <span id="last-updated"></span>
+    </div>
+  </footer>
+  <!-- ==================== END FOOTER ========================== -->
+
+  <script src="script.js"></script>
+</body>
+</html>
